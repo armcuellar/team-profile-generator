@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "is-email": "^1.0.2"
   },
   "name": "team-profile-generator",
   "description": "",
