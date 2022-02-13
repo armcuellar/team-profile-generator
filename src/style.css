@@ -1,0 +1,25 @@
+header {
+    background-color: #74b9ff;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.card {
+    padding: 10px;
+    margin: 5px;
+    width: 18rem;
+}
+
+#newBackground {
+    background-color: #dfe6e9;
+}
+
+.card-body {
+    background-color: #636e72;
+    color: #ffeaa7;
+}
+
+.list-group-item {
+    background-color: #636e72;
+    color: #636e72;
+}
