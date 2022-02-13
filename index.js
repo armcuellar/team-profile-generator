@@ -5,6 +5,7 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const generateTemplate = require('./src/page-template');
+const { Console } = require('console');
 
 var employeeArray = [];
 
@@ -231,10 +232,10 @@ const addEmployee = employeeData => {
 }
 
 const endLoop = finalData => {
-    console.log(finalData)
     templateData = generateTemplate(finalData);
-    console.log(templateData);
     writeToFile("dist/index.html", templateData);
+    copyFile();
+    console.log(" Webpage Generated!")
 }
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
@@ -244,6 +245,20 @@ function writeToFile(fileName, data) {
         }
     })
 }
+const copyFile = copiedContent => {
+    return new Promise((resolve, reject) => {
+        fs.copyFile('./src/style.css', './dist/style.css', err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
+        })
+    })
+};
 
 function init() {
     managerQuestions()
@@ -255,7 +270,7 @@ function init() {
 
 }
 
-init();
-// const mock = [{ "name": "Armando", "id": "1", "email": "Armando@armando.com", "role": "Manager", "officeNumber": "123456" }, { "name": "Two", "id": "2", "email": "two@two.com", "role": "Intern", "school": "two school" }, { "name": "three", "id": "3", "email": "three@three", "role": "Engineer", "gitHub": "three" }, { "name": "four", "id": "4", "email": "four@four", "role": "Intern", "school": "four school" }]
+// init();
+const mock = [{ "name": "Armando", "id": "1", "email": "Armando@armando.com", "role": "Manager", "officeNumber": "123456" }, { "name": "Two", "id": "2", "email": "two@two.com", "role": "Intern", "school": "two school" }, { "name": "three", "id": "3", "email": "three@three", "role": "Engineer", "gitHub": "three" }, { "name": "four", "id": "4", "email": "four@four", "role": "Intern", "school": "four school" }]
 
-// endLoop(mock);
+endLoop(mock);
