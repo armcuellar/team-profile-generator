@@ -7,7 +7,7 @@ test("Create engineer object", () => {
     expect(engineer.id).toBe('2');
     expect(engineer.email).toBe('a@student.com');
     expect(engineer.role).toBe('Engineer');
-    expect(engineer.github).toBe('armcuellar')
+    expect(engineer.gitHub).toBe('armcuellar')
 })
 test('function to get role', () => {
     const engineer = new Engineer('Armando', '2', 'a@student.com', 'armcuellar');

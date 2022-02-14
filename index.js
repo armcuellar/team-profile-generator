@@ -57,16 +57,7 @@ const managerQuestions = () => {
         {
             type: 'input',
             name: 'officeNumber',
-            message: 'What is your office number?',
-            validate: officeNumber => {
-                if (isNaN(officeNumber)) {
-                    console.log(" Enter a valid number")
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
+            message: 'What is your office number?'
         }
     ])
 }
@@ -203,11 +194,9 @@ const engineerQuestions = () => {
     })
 }
 const addEmployee = employeeData => {
-    console.log(employeeData)
     // employeeData.teamMember.push(employeeData);
 
     employeeArray.push(employeeData)
-    console.log(employeeArray)
     return inquirer.prompt([
         {
             type: 'list',
@@ -270,7 +259,4 @@ function init() {
 
 }
 
-// init();
-const mock = [{ "name": "Armando", "id": "1", "email": "Armando@armando.com", "role": "Manager", "officeNumber": "123456" }, { "name": "Two", "id": "2", "email": "two@two.com", "role": "Intern", "school": "two school" }, { "name": "three", "id": "3", "email": "three@three", "role": "Engineer", "gitHub": "three" }, { "name": "four", "id": "4", "email": "four@four", "role": "Intern", "school": "four school" }]
-
-endLoop(mock);
+init();
