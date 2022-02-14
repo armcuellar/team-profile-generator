@@ -13,9 +13,9 @@ The purpose of this application is to automatically generate a team roster throu
 
 ## Installation
 
-To run the application you must 
+To run the application you must run `npm i` then
 
-run node index on the command line
+run `node index` on the command line
 
 
 ## Usage
